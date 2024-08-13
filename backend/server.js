@@ -5,6 +5,16 @@ const dotenv = require('dotenv');
 const User = require('./models/User');
 const JobListing = require('./models/JobListing');
 const Application = require('./models/Application');
+const authRoutes = require('./routes/authRoutes');
+
+// Use Routes
+app.use('/api/auth', authRoutes);
+
+const jobRoutes = require('./routes/jobRoutes');
+
+// Use Routes
+app.use
+
 
 
 dotenv.config();
