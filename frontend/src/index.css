@@ -1,11 +1,10 @@
-/* src/index.css */
 html, body, #root {
   height: 100%;
   background-color: #c1b6c1;
 }
 
 main {
-  padding-top: 5rem; /* Adjust for fixed navbar */
+  padding-top: 5rem; 
 }
 
 

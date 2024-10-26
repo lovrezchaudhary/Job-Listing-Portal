@@ -1,4 +1,3 @@
-// src/components/JobCard.js
 import React, { useState } from 'react';
 import { Card, Button, Modal } from 'react-bootstrap';
 

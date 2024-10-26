@@ -1,4 +1,3 @@
-// src/pages/JobList.js
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Spinner, Alert } from 'react-bootstrap';
 import JobCard from '../components/JobCard';  

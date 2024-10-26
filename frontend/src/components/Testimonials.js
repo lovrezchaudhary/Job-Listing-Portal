@@ -1,4 +1,3 @@
-// src/components/Testimonials.js
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 

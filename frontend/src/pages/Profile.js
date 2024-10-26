@@ -1,49 +1,48 @@
-// src/pages/Profile.js
-import React from 'react';
-import { Container, Form, Button, Row, Col } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Container, Form, Button } from 'react-bootstrap';
+import Login from '../components/Login';
 
-function Profile() {
+const Profile = () => {
+  const [isLogin, setIsLogin] = useState(false);
+
+  const handleLogin = (email, password) => {
+    console.log('Logging in:', { email, password });
+    setIsLogin(false);
+  };
+
   return (
-    <Container className="mt-5 mb-5 pt-4 d-flex flex-column align-items-center">
-      <h2 className="text-center fw-bold mb-4">Upload Your Resume</h2>
-      <Form className="border p-5 shadow-lg bg-white rounded w-100" style={{ maxWidth: '500px' }}>
-        <Row>
-          <Col xs={12} md={12}>
-            <Form.Group controlId="formName" className="mb-4">
-              <Form.Label className="fw-semibold">Name</Form.Label>
-              <Form.Control 
-                type="text" 
-                placeholder="Enter your name" 
-                className="p-2 border border-2 rounded"
-              />
+    <Container className="mt-5 pt-4" style={{ width: '700px' }}>
+      {isLogin ? (
+        <Login onLogin={handleLogin} />
+      ) : (
+        <>
+          <h2 className="text-center fw-bold mb-4">Upload Your Resume</h2>
+          <Form className="border p-4 shadow-sm bg-light rounded">
+            <Form.Group controlId="formName" className="mb-3">
+              <Form.Label>Name</Form.Label>
+              <Form.Control type="text" placeholder="Enter your name" />
             </Form.Group>
-          </Col>
-          <Col xs={12} md={12}>
-            <Form.Group controlId="formEmail" className="mb-4">
-              <Form.Label className="fw-semibold">Email</Form.Label>
-              <Form.Control 
-                type="email" 
-                placeholder="Enter your email" 
-                className="p-2 border border-2 rounded"
-              />
+            <Form.Group controlId="formEmail" className="mb-3">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="email" placeholder="Enter your email" />
             </Form.Group>
-          </Col>
-          <Col xs={12} md={12}>
-            <Form.Group controlId="formResume" className="mb-4">
-              <Form.Label className="fw-semibold">Upload Resume</Form.Label>
-              <Form.Control 
-                type="file" 
-                className="p-2 border border-2 rounded"
-              />
+            <Form.Group controlId="formEmail" className="mb-3">
+              <Form.Label>Qualification</Form.Label>
+              <Form.Control type="text" placeholder="Enter your Qualification" />
             </Form.Group>
-          </Col>
-        </Row>
-        <Button variant="primary" type="submit" className="w-100 py-2 fw-bold shadow">
-          Submit
-        </Button>
-      </Form>
+            <Form.Group controlId="formResume" className="mb-3">
+              <Form.Label>Upload Resume</Form.Label>
+              <Form.Control type="file" />
+            </Form.Group>
+            <Button variant="primary" type="submit" className="w-100">Save Changes</Button>
+          </Form>
+          <div className="text-center mt-3 mb-5">
+            <Button variant="link" onClick={() => setIsLogin(true)}>Already have an account? Login</Button>
+          </div>
+        </>
+      )}
     </Container>
   );
-}
+};
 
 export default Profile;

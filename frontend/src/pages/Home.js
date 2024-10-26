@@ -1,10 +1,8 @@
-// src/pages/Home.js
 import React from 'react';
 import SearchBar from '../components/SearchBar';
 import JobCard from '../components/JobCard';
 import Testimonials from '../components/Testimonials';
 import { Container, Row, Col } from 'react-bootstrap';
-// import './Home.css'; // Import the CSS file for additional styles
 
 const Home = () => {
   const sampleJobs = [

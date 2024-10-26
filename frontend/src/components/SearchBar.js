@@ -1,4 +1,3 @@
-// src/components/SearchBar.js
 import React from 'react';
 import { Form, Button, InputGroup } from 'react-bootstrap';
 
@@ -16,11 +15,11 @@ const SearchBar = ({ onSearch }) => {
           type="text"
           placeholder="Search jobs..."
           name="query"
-          className="rounded-start" // Round the left side
+          className="rounded-start" 
           aria-label="Search jobs"
           style={{ backgroundColor: '#FEF9F2' }}
         />
-        <Button type="submit" variant="success" className="rounded-end"> {/* Round the right side */}
+        <Button type="submit" variant="success" className="rounded-end"> 
           Search
         </Button>
       </InputGroup>
