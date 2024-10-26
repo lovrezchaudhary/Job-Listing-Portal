@@ -15,6 +15,12 @@ const jobRoutes = require('./routes/jobRoutes');
 // Use Routes
 app.use
 
+const profileRoutes = require('./routes/profileRoutes');
+
+// Use Routes
+app.use('/api/profile', profileRoutes);
+
+
 
 
 dotenv.config();
